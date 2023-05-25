@@ -1,0 +1,18 @@
+schemas:
+  Image:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+
+securitySchemes:
+  apiKey:
+    type: apiKey
+    in: header
+    name: X-API-Key
+    description: API key for authentication. Please provide the API key in the request header.
+
+security:
+  - apiKey: [] # Apply apiKey security scheme to all requests
