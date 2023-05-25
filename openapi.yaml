@@ -1,0 +1,9 @@
+openapi: 3.0.0
+info:
+  title: AAA api specs
+  version: 1.0.0
+  description: Api specs to run correctly the AAA prototype
+paths:
+  $ref: './paths/*.yaml'
+components:
+  $ref: './components.yaml'
