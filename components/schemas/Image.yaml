@@ -7,3 +7,6 @@ properties:
   url:
     type: string
     format: uri
+  thumbnail:
+    type: string
+    format: uri
