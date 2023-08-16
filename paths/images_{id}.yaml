@@ -1,0 +1,104 @@
+get:
+  tags:
+    - Image
+  summary: Get an image by identifier
+  description: |
+    Some description of the operation.
+    You can use `Markdown` here.
+  operationId: getImageById
+  parameters:
+    - name: id
+      in: path
+      description: The id that needs to be fetched
+      required: true
+      schema:
+        type: string
+
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Image.yaml
+          example:
+            id: a-nice-image-id
+            name: A nice image
+            url: https://example.com/images/a-nice-image-id.png
+    '403':
+      description: Forbidden
+      $ref: ../components/responses/Error.yaml
+    '404':
+      description: Image not found
+      $ref: ../components/responses/Error.yaml
+
+delete:
+  tags:
+    - Image
+  summary: Delete an image by identifier
+  operationId: deleteImageById
+  security:
+    - main_auth:
+        - write:images
+    - api_key: []
+  parameters:
+    - name: id
+      in: path
+      description: The id that needs to be deleted
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+    '403':
+      description: Forbidden
+      $ref: ../components/responses/Error.yaml
+    '404':
+      description: Image not found
+      $ref: ../components/responses/Error.yaml
+
+put:
+  tags:
+    - Image
+  summary: Update an image by identifier
+  operationId: updateImageById
+  security:
+    - main_auth:
+        - write:images
+    - api_key: []
+  parameters:
+    - name: id
+      in: path
+      description: The id that needs to be updated
+      required: true
+      schema:
+        type: string
+    - name: image
+      in: body
+      description: The image to update
+      required: true
+      schema:
+        $ref: ../components/schemas/Image.yaml
+      example:
+        id: a-nice-image-id
+        name: A nice image
+        url: https://example.com/images/a-nice-image-id.png
+  responses:
+    '204':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Image.yaml
+          example:
+            id: a-nice-image-id
+            name: A nice image
+            url: https://example.com/images/a-nice-image-id.png
+
+    '403':
+      description: Forbidden
+      $ref: ../components/responses/Error.yaml
+    '404':
+      description: Image not found
+      $ref: ../components/responses/Error.yaml
