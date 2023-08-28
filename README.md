@@ -13,6 +13,12 @@ docker run -it --rm -p 8080:80 \
 
 ```
 
+Without Docker, just create the index.html unsing [redocly](https://redocly.com/docs/cli/installation) from the command line:
+
+```bash
+redocly build-docs openapi.yaml -o index.html
+```
+
 ## deployment
 
 ```bash
