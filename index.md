@@ -18,7 +18,6 @@ After clicking on one of them it will redirect to the focus picture part.
 ## Focus picture part
 
 The page includes a header with a new option allowing the user to return to the stage where they can take a photo. The middle section features the selected picture accompanied by an info frame box.
-
 The Info Box comprises a Title, representing the picture's name in a 30px font size. Adjacent, in a slightly smaller 24px font size, are details such as the artist's name, year of production, and painting technique. These details are presented using a two-color gradient with a 1.5px stroke in the primary color.
 
 The lower half of the page showcases a picture selected from a similar artist. This inclusion encourages the user to scroll down, leading them to discover similar pictures through the 'categories.'
